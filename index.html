@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FANG | Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body class="zh">
+    <header>
+        <div class="logo">FANG</div>
+        <nav>
+            <a href="#hero"><span class="zh">关于</span><span class="en">About</span></a>
+            <a href="#skills"><span class="zh">技能</span><span class="en">Skills</span></a>
+            <a href="#projects"><span class="zh">项目</span><span class="en">Projects</span></a>
+        </nav>
+        <div class="lang">
+            <span class="zh">GX BH</span><span class="en">Haikou, Hainan</span> &nbsp;&nbsp;
+            <span class="lang-btn" id="lang-toggle">EN</span>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="hero-container" id="hero-container">
+            <!-- 底层 -->
+            <div class="hero-layer back">
+                <div class="bg-pattern"></div>
+                <div class="hero-content">
+                    <h1>
+                        <span class="zh">你好，我是<em>FANG</em></span>
+                        <span class="en">Hello I'M <em>FANG</em></span>
+                    </h1>
+                    <p>
+                        <span class="zh">软件工程师 / 20岁 / 北海</span>
+                        <span class="en">Software Engineer / 20 Years Old / Beihai</span>
+                    </p>
+                </div>
+            </div>
+            <!-- 顶层遮罩 -->
+            <div class="hero-layer front" id="hero-mask">
+                <div class="hero-content">
+                    <h1>
+                        <span class="zh">Hello I'M <em>FANG</em></span>
+                        <span class="en">你好，我是 <em>FANG</em></span>
+                    </h1>
+                    <p>
+                        <span class="zh">SOFTWARE ENGINEER / 20 YEARS OLD / BEIHAI</span>
+                        <span class="en">软件工程师 / 20岁 / 北海</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-prompt">
+            <span class="zh">移动鼠标开启探索吧 • 向下滚动查看更多</span>
+            <span class="en">Move mouse to explore • Scroll down for more</span>
+        </div>
+    </section>
+
+    <!-- 技能区域 -->
+    <section class="skills scroll-reveal" id="skills">
+
+        <!-- 3D 翻转技能大卡片 -->
+        <div class="skills-grid">
+            <!-- 卡片 1 -->
+            <div class="skill-card-flip">
+                <div class="card-inner">
+                    <!-- 正面 -->
+                    <div class="card-front">
+                        <div class="card-header">
+                            <div class="icon">PV</div>
+                            <div class="title-wrap">
+                                <h3><span class="zh">后端开发</span><span class="en">Backend Dev</span></h3>
+                                <p><span class="zh">Java生态与高性能服务开发</span><span class="en">Java Ecosystem &
+                                        High-Performance Services</span></p>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="stats-row-inner">
+                            <div class="stat">
+                                <div class="num">3+</div>
+                                <div class="label"><span class="zh">核心技能</span><span class="en">Core Skills</span></div>
+                            </div>
+                            <div class="stat">
+                                <div class="num">1</div>
+                                <div class="label"><span class="zh">精通</span><span class="en">Proficient</span></div>
+                            </div>
+                            <div class="stat">
+                                <div class="num">95%</div>
+                                <div class="label"><span class="zh">最高掌握度</span><span class="en">Mastery Level</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 背面 -->
+                    <div class="card-back">
+                        <div class="card-header">
+                            <div class="icon">PV</div>
+                            <div class="title-wrap">
+                                <h3><span class="zh">后端开发</span><span class="en">Backend Dev</span></h3>
+                                <p><span class="zh">详细技能清单</span><span class="en">Detailed Skills List</span></p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="skill-row">
+                                <span class="skill-name">Python / FastAPI</span>
+                                <span class="badge badge-black"><span class="zh">精通</span><span
+                                        class="en">Pro</span></span>
+                            </div>
+                            <div class="skill-row">
+                                <span class="skill-name">Spring Cloud</span>
+                                <span class="badge badge-gray"><span class="zh">熟练</span><span
+                                        class="en">Skilled</span></span>
+                            </div>
+                            <div class="skill-row">
+                                <span class="skill-name">MySQL / PostgreSQL</span>
+                                <span class="badge badge-gray"><span class="zh">熟练</span><span
+                                        class="en">Skilled</span></span>
+                            </div>
+                            <div class="skill-row">
+                                <span class="skill-name">Redis / MongoDB</span>
+                                <span class="badge badge-gray"><span class="zh">熟练</span><span
+                                        class="en">Skilled</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 卡片 2 -->
+            <div class="skill-card-flip">
+                <div class="card-inner">
+                    <!-- 正面 -->
+                    <div class="card-front">
+                        <div class="card-header">
+                            <div class="icon">EN</div>
+                            <div class="title-wrap">
+                                <h3><span class="zh">工程能力</span><span class="en">Engineering</span></h3>
+                                <p><span class="zh">系统架构与工程实践</span><span class="en">System Architecture &
+                                        Practices</span></p>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="stats-row-inner">
+                            <div class="stat">
+                                <div class="num">2+</div>
+                                <div class="label"><span class="zh">核心技能</span><span class="en">Core Skills</span></div>
+                            </div>
+                            <div class="stat">
+                                <div class="num">0</div>
+                                <div class="label"><span class="zh">精通</span><span class="en">Proficient</span></div>
+                            </div>
+                            <div class="stat">
+                                <div class="num">68%</div>
+                                <div class="label"><span class="zh">平均掌握度</span><span class="en">Avg Mastery</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 背面 -->
+                    <div class="card-back">
+                        <div class="card-header">
+                            <div class="icon">EN</div>
+                            <div class="title-wrap">
+                                <h3><span class="zh">工程能力</span><span class="en">Engineering</span></h3>
+                                <p><span class="zh">系统架构与工程实践</span><span class="en">System Architecture &
+                                        Practices</span></p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="skill-row">
+                                <span class="skill-name"><span class="zh">系统架构设计</span><span class="en">Architecture
+                                        Design</span></span>
+                                <span class="badge badge-black"><span class="zh">掌握</span><span
+                                        class="en">Grasped</span></span>
+                            </div>
+                            <div class="skill-row">
+                                <span class="skill-name">Docker / Kubernetes</span>
+                                <span class="badge badge-gray"><span class="zh">掌握</span><span
+                                        class="en">Grasped</span></span>
+                            </div>
+                            <div class="skill-row">
+                                <span class="skill-name"><span class="zh">CI/CD 自动化</span><span class="en">CI/CD
+                                        Automation</span></span>
+                                <span class="badge badge-gray"><span class="zh">了解</span><span
+                                        class="en">Familiar</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目经历区域 -->
+    <section class="projects scroll-reveal" id="projects">
+        <div class="project-list">
+            <!-- 项目1 -->
+            <div class="project-card pseudo-3d">
+                <div class="proj-number">01</div>
+                <h3><span class="zh">智能客服Agent平台</span><span class="en">AI Agent Platform</span></h3>
+                <div class="tags">
+                    <span class="tag" style="background:#f0f0f0; color:#333">LLM</span>
+                    <span class="tag" style="background:#f0f0f0; color:#333">RAG</span>
+                    <span class="tag" style="background:#f0f0f0; color:#333">Agent</span>
+                    <span class="tag" style="background:#f0f0f0; color:#333">Spring Boot</span>
+                </div>
+                <p>
+                    <span class="zh">基于大语言模型的多轮对话系统，支持工具调用、知识库实时检索与上下文记忆，日均处理对话 10万+</span>
+                    <span class="en">LLM-based multi-turn dialogue system supporting tool calls, real-time KB retrieval,
+                        and context memory. Handling 100K+ daily queries.</span>
+                </p>
+                <div class="year">2025</div>
+            </div>
+
+            <!-- 项目2 -->
+            <div class="project-card pseudo-3d">
+                <div class="proj-number">02</div>
+                <h3><span class="zh">自动化流程引擎</span><span class="en">Workflow Engine</span></h3>
+                <div class="tags">
+                    <span class="tag">Workflow</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">Microservices</span>
+                </div>
+                <p>
+                    <span class="zh">可视化AI工作流编排系统，支持拖拽式流程设计、自动化任务调度与执行监控，提升业务效率 60%</span>
+                    <span class="en">Visual AI workflow orchestration supporting drag-and-drop design, scheduling, and
+                        monitoring. Improved business efficiency by 60%.</span>
+                </p>
+                <div class="year">2025</div>
+            </div>
+
+            <!-- 项目3 -->
+            <div class="project-card pseudo-3d">
+                <div class="proj-number">03</div>
+                <h3><span class="zh">RAG知识库系统</span><span class="en">RAG Knowledge Base</span></h3>
+                <div class="tags">
+                    <span class="tag" style="background:#f0f0f0; color:#333">Vector DB</span>
+                    <span class="tag" style="background:#f0f0f0; color:#333">Embedding</span>
+                    <span class="tag" style="background:#f0f0f0; color:#333">FastAPI</span>
+                </div>
+                <p>
+                    <span class="zh">企业级智能知识库，支持多格式文档解析、语义检索与问答生成，检索准确率 95%+</span>
+                    <span class="en">Enterprise-grade smart KB, supporting multi-format doc parsing, semantic retrieval,
+                        and Q&A. 95%+ retrieval accuracy.</span>
+                </p>
+                <div class="year">2024</div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

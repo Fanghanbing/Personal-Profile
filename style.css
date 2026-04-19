@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,900;1,400&family=Noto+Sans+SC:wght@400;700;900&display=swap');
+
+:root {
+    --bg-light: #ffffff;
+    --text-light: #111111;
+    --bg-dark: #111111;
+    --text-dark: #ffffff;
+    --mask-size: 11rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    background-color: #fafafa;
+    color: var(--text-light);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body.zh .en { display: none; }
+body.en .zh { display: none; }
+
+/* Nav */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+header .logo {
+    font-weight: 900;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+}
+
+header nav {
+    display: flex;
+    gap: 2rem;
+    padding: 0.5rem 1.5rem;
+    background: #f0f0f0;
+    border-radius: 20px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.2rem 0.5rem;
+    transition: color 0.2s;
+}
+
+header nav a:hover {
+    color: #000;
+}
+
+header .lang {
+    font-size: 0.85rem;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+header .lang-btn {
+    border: 1px solid #ccc;
+    padding: 0.25rem 0.8rem;
+    border-radius: 20px;
+    color: #000;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+header .lang-btn:hover {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    perspective: 1200px;
+}
+
+.hero-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.1s linear;
+}
+
+.hero-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+.hero-layer.back {
+    z-index: 1;
+}
+.hero-layer.front {
+    z-index: 10;
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-layer h1 {
+    font-size: 6.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -2px;
+}
+
+.hero-layer h1 em {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.hero-layer p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+/* Base layer */
+.hero-layer.back {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+}
+
+.bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: 1;
+}
+
+/* Mask text layer */
+.hero-layer.front {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+    --x: 50vw;
+    --y: 50vh;
+    clip-path: circle(var(--mask-size) at var(--x) var(--y));
+}
+
+.hero-layer.front p {
+    color: #888;
+}
+
+.scroll-prompt {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.85rem;
+    color: #aaa;
+    letter-spacing: 1px;
+}
+
+/* Skills Flip Card Section */
+.skills {
+    padding: 8rem 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fafafa;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(0, 0, 0, 0.02) 2px, rgba(0, 0, 0, 0.02) 10px);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Image shows a stacked list of full width cards */
+    gap: 3rem;
+    width: 100%;
+    max-width: 900px;
+}
+
+.skill-card-flip {
+    height: 480px;
+    perspective: 2500px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+
+.skill-card-flip:hover .card-inner {
+    transform: rotateX(180deg);
+}
+
+/* Flip Card Faces */
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: #fff;
+    border-radius: 20px;
+    padding: 3rem 4rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+}
+
+/* We flip vertically on the X axis to give a calendar-like flip */
+.card-back {
+    transform: rotateX(180deg);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.card-header .icon {
+    width: 65px;
+    height: 65px;
+    background: #111;
+    color: #fff;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.card-header h3 {
+    font-size: 1.6rem;
+    font-weight: 900;
+    margin-bottom: 0.3rem;
+}
+
+.card-header p {
+    color: #888;
+    font-size: 1rem;
+}
+
+/* Front Face Stats */
+.divider {
+    height: 1px;
+    background: #eee;
+    margin: 3rem 0;
+    width: 100%;
+}
+
+.stats-row-inner {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex: 1;
+    align-items: center;
+}
+
+.stats-row-inner .stat {
+    text-align: center;
+}
+
+.stats-row-inner .num {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+}
+
+.stats-row-inner .label {
+    color: #888;
+    font-size: 1.1rem;
+}
+
+/* Back Face List */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    overflow-y: auto;
+}
+
+.skill-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
+    border-radius: 12px;
+    transition: background 0.3s;
+    background: #f9f9f9;
+}
+
+.skill-row:hover {
+    background: #f1f1f1;
+}
+
+.skill-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.badge {
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.badge-black {
+    background: #111;
+}
+
+.badge-gray {
+    background: #555;
+}
+
+/* Projects pseudo-3D */
+.projects {
+    padding: 4rem 10vw 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fafafa;
+}
+
+.project-list {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.project-card {
+    position: relative;
+    background: #fff;
+    border-radius: 20px;
+    padding: 4rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+    transform-style: preserve-3d;
+    cursor: default;
+}
+
+.proj-number {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: #f0f0f0;
+    z-index: 0;
+}
+
+.project-card h3 {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+    transform: translateZ(40px);
+    /* 3D pop effect */
+}
+
+.tags {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+    transform: translateZ(30px);
+}
+
+.tag {
+    background: #111;
+    color: #fff;
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.project-card p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    max-width: 80%;
+    position: relative;
+    z-index: 1;
+    transform: translateZ(20px);
+}
+
+.project-card .year {
+    color: #aaa;
+    font-size: 1rem;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+    transform: translateZ(10px);
+}
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
