@@ -20,6 +20,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Touch support for mobile mask
+    document.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 0) {
+            const touch = e.touches[0];
+            requestAnimationFrame(() => {
+                if (heroFront) {
+                    heroFront.style.setProperty('--x', `${touch.clientX}px`);
+                    heroFront.style.setProperty('--y', `${touch.clientY}px`);
+                }
+            });
+        }
+    }, { passive: true });
+
     document.addEventListener('mouseleave', () => {
         if (heroContainer) {
             heroContainer.style.transform = `rotateY(0deg) rotateX(0deg)`;
