@@ -452,3 +452,116 @@ header .lang-btn:hover {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    :root {
+        --mask-size: 8rem;
+    }
+
+    header {
+        padding: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    header .logo {
+        position: absolute;
+        left: 1.5rem;
+        top: 1.25rem;
+    }
+
+    header .lang {
+        position: absolute;
+        right: 1.5rem;
+        top: 1rem;
+    }
+
+    header .lang > span:not(.lang-btn) {
+        display: none;
+    }
+
+    header nav {
+        margin-top: 2.8rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-layer h1 {
+        font-size: 2.5rem;
+        letter-spacing: -1px;
+    }
+
+    .hero-layer p {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+
+    .skills, .projects {
+        padding: 4rem 1.5rem;
+    }
+
+    .skill-card-flip {
+        height: 540px;
+    }
+
+    .card-front, .card-back {
+        padding: 2rem 1.5rem;
+    }
+
+    .card-header .icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .card-header h3 {
+        font-size: 1.3rem;
+    }
+
+    .stats-row-inner .num {
+        font-size: 2.5rem;
+    }
+
+    .stats-row-inner .label {
+        font-size: 0.8rem;
+    }
+
+    .skill-row {
+        padding: 1rem;
+    }
+
+    .skill-name {
+        font-size: 0.9rem;
+    }
+
+    .badge {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.75rem;
+    }
+
+    .project-card {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .proj-number {
+        font-size: 3rem;
+        top: 1rem;
+        right: 1.5rem;
+    }
+
+    .project-card h3 {
+        font-size: 1.3rem;
+        margin-top: 1rem;
+    }
+
+    .tags {
+        flex-wrap: wrap;
+    }
+
+    .project-card p {
+        max-width: 100%;
+        font-size: 0.95rem;
+    }
+}
